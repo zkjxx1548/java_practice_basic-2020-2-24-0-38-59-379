@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -5,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class JsonUtilTest {
 
   @Test
-  void should_return_json_when_convert_to_json_given_valid_person() {
+  void should_return_json_when_convert_to_json_given_valid_person() throws JsonProcessingException {
     Person person = new Person("Solider", 19);
     String json = JsonUtil.convertToJson(person);
     assertEquals("{\"name\":\"Solider\",\"age\":19}", json);
@@ -36,7 +37,7 @@ class JsonUtilTest {
 
     //TODO: change the code to pass the test
 
-    int expectedValue = Integer.MAX_VALUE;
+    int expectedValue = 0;
 
 
     assertEquals(expectedValue, getValue(2));
